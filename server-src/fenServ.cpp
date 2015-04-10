@@ -1,17 +1,31 @@
 #include "fenserv.h"
-#include "ui_fenserv.h"
 
 FenServ::FenServ()
 {
-    //Disposition des boutons de la fenêtre
+    //Disposition des boutons de la fenÃªtre
     servStat = new QLabel;
+    buSent = new QPushButton(tr("Envoyer"));
+    textSer = new QTextEdit;
+    ligneCom = new QLineEdit;
     quitBu = new QPushButton(tr("Quitter"));
-    connect(quitBu, SIGNAL(clicked()), qApp, SLOT(quit()));
 
     QVBoxLayout *layout = new QVBoxLayout;
+    QHBoxLayout *layout2 = new QHBoxLayout;
     layout->addWidget(servStat);
-    layout->addWidget(quitBu);
+    layout->addWidget(textSer);
+    layout->addLayout(layout2);
+    layout2->addWidget(ligneCom);
+    layout2->addWidget(buSent);
+    layout2->addWidget(quitBu);
     setLayout(layout);
+
+    setWindowTitle(tr("Alka-Loqui//SERVEUR"));
+//Definition des connection
+    connect(quitBu, SIGNAL(clicked()), qApp, SLOT(quit()));
+    connect(buSent, SIGNAL(clicked()), this, SLOT());  //Plsu qu'a faire le slot pour envoyer la commande
+
+    //Parametrage des widgets
+    textSer->setReadOnly(true);
 
     setWindowTitle(tr("Alka-Loqui//SERVEUR"));
 

@@ -10,7 +10,6 @@ class fenGuestW : public QMainWindow
     Q_OBJECT
 public:
     fenGuestW();
-private slots:
 
 
 private:

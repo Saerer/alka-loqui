@@ -20,7 +20,9 @@ private slots:
 private:
     QLabel *servStat;
     QPushButton *quitBu;
-
+    QPushButton *buSent;
+    QTextEdit *textSer;
+    QLineEdit *ligneCom;
     QTcpServer *server;
     QList<QTcpSocket *> guests;
     quint16 tailleMessage;

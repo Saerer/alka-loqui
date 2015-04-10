@@ -83,12 +83,6 @@ fenGuestW::fenGuestW() : QMainWindow()
     actQuit->setShortcut(QKeySequence("Ctrl+Q"));
     actConn->setShortcut(QKeySequence("Alt+C"));
 
-    //algo
-
-    while (guest_working = 0)
-    {
-        fenCo->close();
-    }
 
 }
 

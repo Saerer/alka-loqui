@@ -5,7 +5,7 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    fenGuestW fen;
+    FenGuest fen;
     fen.show();
 
     return a.exec();

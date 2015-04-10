@@ -4,37 +4,49 @@
 #include <QtWidgets>
 #include <QtNetwork>
 
-extern int guest_working;
 
-class FenGuest : public QWidget
+class FenGuest : public QMainWindow
 {
     Q_OBJECT
 public:
     FenGuest();
 
-private slots:
-    void static enterPressedCo();
-    void static dataRec();
-    void static guestCo();
-    void static guestDisc();
-    void static erreurSocket(QAbstractSocket::SocketError erreur);
-    void static sentMessage(QString textYHTS);
-    void static on_boutCo_clicked();
+  public slots:
+    void dataRec();
+    void guestCo();
+    void guestDisc();
+    void erreurSocket(QAbstractSocket::SocketError erreur);
+    void sentMessage(QString textYHTS);
+    void on_boutCo_clicked();
 
-    void static on_boutSent_clicked();
+    void on_boutSent_clicked();
 
 private:
 
-    static QTcpSocket *socket;
-    static quint16 tailleMessage;
+     QTcpSocket *socket;
+     quint16 tailleMessage;
     //Element de la fenetre;
-    static QPushButton *boutCo;
-    static QLineEdit *adrIP;
-    static QSpinBox *numPort;
-    static QTextEdit *listeMessages;
-    static QLineEdit *pseudo;
-    static QLineEdit *textSe;
-    static QPushButton *boutSent;
+     QPushButton *boutCo;
+     QLineEdit *adrIP;
+     QSpinBox *numPort;
+     QTextEdit *listeMessages;
+     QLineEdit *pseudo;
+     QLineEdit *textSe;
+     QPushButton *boutSent;
+     QWidget *fenCo;
+     QWidget *mdi;
+     QMdiArea *zoneCentr;
+     QMenu *mnFich;
+     QMenu *mnAide;
+     QAction *actConn;
+     QAction *actQuit;
+     QAction *actHelp;
+     QVBoxLayout *layV;
+     QHBoxLayout *layB;
+     QGridLayout *lB;
+     QLabel *lab1;
+     QLabel *lab2;
+     QLabel *lab3;
 
 };
 

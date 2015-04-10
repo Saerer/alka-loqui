@@ -13,10 +13,8 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-    fenguest.cpp \
-    fenGuestW.cpp
+    fenguest.cpp
 
 
 HEADERS  += \
-    fenguest.h \
-    fenGuestW.h
+    fenguest.h
